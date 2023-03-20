@@ -1,8 +1,8 @@
 import { type NextPage } from "next";
 import Head from "next/head";
-import Link from "next/link";
 
 import { api } from "~/utils/api";
+import Link from "next/link";
 
 const Home: NextPage = () => {
   const hello = api.example.hello.useQuery({ text: "from tRPC" });
@@ -20,6 +20,12 @@ const Home: NextPage = () => {
             Cyberpunk <span className="text-[#ff003c]">Character Creator</span>
           </h1>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8">
+            <Link href="/2020">
+              <button className="bg-gray-500 hover:bg-gray-600 text-white py-2 px-6 rounded">2020</button>
+            </Link>
+            <Link href="/red">
+              <button className="bg-red-500 hover:bg-red-600 text-white py-2 px-6 rounded">Red</button>
+            </Link>
           </div>
           <p className="text-2xl text-white">
             {hello.data ? hello.data.greeting : "Loading tRPC query..."}
