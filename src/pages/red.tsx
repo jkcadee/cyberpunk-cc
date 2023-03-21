@@ -26,7 +26,7 @@ const Red: NextPage = () => {
                     <ul className="flex text-white">
                         {options.map((opt) => {return(
                         <li key={`${opt}`} className="mr-6">
-                            <a className="block mt-4 lg:inline-block lg:mt-0 hover:text-[#28feff] active:text-[#28feff] text-xl cursor-pointer" 
+                            <a className="block mt-4 lg:inline-block lg:mt-0 hover:text-[#28feff] text-xl cursor-pointer" 
                             onClick={setNewActive}>{opt}</a>
                         </li>
                         )})}
