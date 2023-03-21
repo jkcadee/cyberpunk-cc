@@ -10,8 +10,23 @@ datasource db {
     url      = env("DATABASE_URL")
 }
 
-model Example {
-    id        String   @id @default(cuid())
-    createdAt DateTime @default(now())
-    updatedAt DateTime @updatedAt
+
+
+
+model Character {
+    id      String @id @default(cuid())
+    handle  String
+    age     Int
+    gender  String
+    role    String
+    int     Int
+    ref     Int
+    dex     Int
+    tech    Int
+    cool    Int
+    will    Int
+    luck    Float
+    move    Int
+    body    Int
+    emp     Float
 }
