@@ -19,3 +19,8 @@ input::-webkit-inner-spin-button {
 .cool-active-box-shadow {
     box-shadow: rgba(40, 254, 255, 0.2) 1px 1px 10px 3px;
 }
+
+.box-w-h {
+    width: 8rem;
+    height: 8rem;
+}
