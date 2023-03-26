@@ -15,7 +15,7 @@ const Input: NextPage<InputProps> = (props) => {
         <input
             type={type}
             className={`cool-box-shadow ${
-                isNum ? "h-32 w-32" : ""
+                isNum ? "h-32 w-32" : "h-12"
             } appearance-none rounded 
                 border border-[#ff6058] bg-[#31181e] py-3 
                 px-4 text-center text-${s} leading-tight text-[#28feff] transition duration-200

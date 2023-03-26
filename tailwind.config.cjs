@@ -4,7 +4,8 @@ const config = {
   theme: {
     extend: {
       fontFamily: {
-        'sans': ['Rajdhani', 'sans-serif']
+        'sans': ['Rajdhani', 'sans-serif'],
+        'body': ['Rajdhani', 'sans-serif']
       }
     },
   },

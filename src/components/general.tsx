@@ -1,12 +1,31 @@
 import { type NextPage } from "next";
 import Input from "./utility/input";
+import Dropdown from "./utility/dropdown";
 
 const General: NextPage = () => {
+    // const [activeRole, setActiveRole] = {};
+
     const general = ["Handle", "Gender"];
+    const roles = [
+        { name: "Rockerboy", ability: "Charismatic Impact", description: "" },
+        { name: "Netrunner", ability: "Interface", description: "" },
+        { name: "Fixer", ability: "Operator", description: "" },
+        { name: "Nomad", ability: "Moto", description: "" },
+        {
+            name: "Solo",
+            ability: "Combat Awareness",
+            description: "",
+        },
+        { name: "Tech", ability: "Maker", description: "" },
+        { name: "Exec", ability: "Teamwork", description: "" },
+        { name: "Media", ability: "Credibility", description: "" },
+        { name: "Lawman", ability: "Backup", description: "" },
+        { name: "Medtech", ability: "Medicine", description: "" },
+    ];
 
     return (
-        <main className="space-between flex flex-col items-center sm:flex-row">
-            <form className="max-w-auto space-between flex items-center justify-center gap-8 sm:basis-1/2">
+        <main className="space-between flex flex-col items-center">
+            <form className="space-between flex basis-1/2 items-center justify-center gap-8">
                 {general.map((info) => {
                     return (
                         <div
@@ -38,7 +57,7 @@ const General: NextPage = () => {
                             Role
                         </label>
                     </div>
-                    <Input isNum={false} s={"xl"} type={"text"} />
+                    <Dropdown inputList={roles} />
                 </div>
                 <p className="mr-6">Your role ability: </p>
                 <p>Role Description:</p>
