@@ -11,11 +11,7 @@ const General: NextPage = () => {
         { name: "Netrunner", ability: "Interface", description: "" },
         { name: "Fixer", ability: "Operator", description: "" },
         { name: "Nomad", ability: "Moto", description: "" },
-        {
-            name: "Solo",
-            ability: "Combat Awareness",
-            description: "",
-        },
+        { name: "Solo", ability: "Combat Awareness", description: "" },
         { name: "Tech", ability: "Maker", description: "" },
         { name: "Exec", ability: "Teamwork", description: "" },
         { name: "Media", ability: "Credibility", description: "" },
@@ -41,13 +37,19 @@ const General: NextPage = () => {
                         </div>
                     );
                 })}
-                <div className="mb-6 flex w-32 flex-wrap justify-center">
+                <div className="mb-6 flex w-24 flex-wrap justify-center">
                     <div className="mb-6 w-full md:mb-0">
                         <label className="mb-2 text-lg font-bold text-white">
                             Age
                         </label>
                     </div>
-                    <Input isNum={true} s={"5xl"} type={"number"} />
+                    <input
+                        type={"number"}
+                        className={`cool-box-shadow h-24 w-24 appearance-none rounded 
+                border border-[#ff6058] bg-[#31181e] py-3 
+                px-4 text-center text-3xl leading-tight text-[#28feff] transition duration-200
+                hover:border-[#28feff] focus:border-[#28feff] focus:outline-none`}
+                    />
                 </div>
             </form>
             <form className="max-w-auto space-between flex basis-1/2 items-center justify-center gap-4 text-lg text-white">
@@ -59,8 +61,21 @@ const General: NextPage = () => {
                     </div>
                     <Dropdown inputList={roles} />
                 </div>
-                <p className="mr-6">Your role ability: </p>
-                <p>Role Description:</p>
+
+                <div className="mr-6 flex flex-col">
+                    <p className="">Your role ability:</p>
+                    <p>
+                        <b>{roles[0]?.ability}</b>
+                    </p>
+                </div>
+
+                <div className="flex w-48 flex-col">
+                    <p>Role Description:</p>
+                    <p>
+                        WIP lots of cool descriptions about your roles lorem
+                        ipsum lorem ipsum lorem ipsum lorem ipsum
+                    </p>
+                </div>
             </form>
         </main>
     );
