@@ -32,7 +32,13 @@ const General: NextPage = () => {
                                 <label className="mb-2 text-lg font-bold text-white">
                                     {info}
                                 </label>
-                                <Input isNum={false} s={"xl"} type={"text"} />
+                                <Input
+                                    isNum={false}
+                                    s={"xl"}
+                                    type={"text"}
+                                    placeholder={"Name"}
+                                    size={"12"}
+                                />
                             </div>
                         </div>
                     );
@@ -45,9 +51,10 @@ const General: NextPage = () => {
                     </div>
                     <input
                         type={"number"}
-                        className={`cool-box-shadow h-24 w-24 appearance-none rounded 
+                        placeholder={"20"}
+                        className={`cool-box-shadow h-16 w-16 appearance-none rounded 
                 border border-[#ff6058] bg-[#31181e] py-3 
-                px-4 text-center text-3xl leading-tight text-[#28feff] transition duration-200
+                px-4 text-center text-lg leading-tight text-[#28feff] transition duration-200
                 hover:border-[#28feff] focus:border-[#28feff] focus:outline-none`}
                     />
                 </div>

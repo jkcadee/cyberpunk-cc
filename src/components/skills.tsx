@@ -4,100 +4,129 @@ import Input from "./utility/input";
 const Skills: NextPage = () => {
     const skills = {
         Awareness: {
-            Concentration: 0,
-            "Conceal Reveal": 0,
-            "Lip Reading": 0,
-            Perception: 0,
-            Tracking: 0,
+            Concentration: { LVL: 0, STAT: 0, BASE: 0 },
+            "Conceal Reveal": { LVL: 0, STAT: 0, BASE: 0 },
+            "Lip Reading": { LVL: 0, STAT: 0, BASE: 0 },
+            Perception: { LVL: 0, STAT: 0, BASE: 0 },
+            Tracking: { LVL: 0, STAT: 0, BASE: 0 },
         },
         Body: {
-            Athletics: 0,
-            Contortionist: 0,
-            Dance: 0,
-            Endurance: 0,
-            "Resist Torture/Drugs": 0,
-            Stealth: 0,
+            Athletics: { LVL: 0, STAT: 0, BASE: 0 },
+            Contortionist: { LVL: 0, STAT: 0, BASE: 0 },
+            Dance: { LVL: 0, STAT: 0, BASE: 0 },
+            Endurance: { LVL: 0, STAT: 0, BASE: 0 },
+            "Resist Torture/Drugs": { LVL: 0, STAT: 0, BASE: 0 },
+            Stealth: { LVL: 0, STAT: 0, BASE: 0 },
         },
         Control: {
-            "Drive Land": 0,
-            "Pilot Air": 0,
-            "Pilot Sea": 0,
-            Riding: 0,
+            "Drive Land": { LVL: 0, STAT: 0, BASE: 0 },
+            "Pilot Air": { LVL: 0, STAT: 0, BASE: 0 },
+            "Pilot Sea": { LVL: 0, STAT: 0, BASE: 0 },
+            Riding: { LVL: 0, STAT: 0, BASE: 0 },
         },
         Education: {
-            Accounting: 0,
-            "Animal Handling": 0,
-            Bureaucracy: 0,
-            Business: 0,
-            Composition: 0,
-            Criminology: 0,
-            Cryptography: 0,
-            Deduction: 0,
-            Education: 0,
-            Gamble: 0,
+            Accounting: { LVL: 0, STAT: 0, BASE: 0 },
+            "Animal Handling": { LVL: 0, STAT: 0, BASE: 0 },
+            Bureaucracy: { LVL: 0, STAT: 0, BASE: 0 },
+            Business: { LVL: 0, STAT: 0, BASE: 0 },
+            Composition: { LVL: 0, STAT: 0, BASE: 0 },
+            Criminology: { LVL: 0, STAT: 0, BASE: 0 },
+            Cryptography: { LVL: 0, STAT: 0, BASE: 0 },
+            Deduction: { LVL: 0, STAT: 0, BASE: 0 },
+            Education: { LVL: 0, STAT: 0, BASE: 0 },
+            Gamble: { LVL: 0, STAT: 0, BASE: 0 },
             Language: [],
-            "Library Search": 0,
+            "Library Search": { LVL: 0, STAT: 0, BASE: 0 },
             "Local Expert": [],
             Science: [],
-            Tactics: 0,
-            "Wilderness Survival": 0,
+            Tactics: { LVL: 0, STAT: 0, BASE: 0 },
+            "Wilderness Survival": { LVL: 0, STAT: 0, BASE: 0 },
         },
         Fighting: {
-            Brawling: 0,
-            Evasion: 0,
-            "Martial Arts": 0,
-            "Melee Weapon": 0,
+            Brawling: { LVL: 0, STAT: 0, BASE: 0 },
+            Evasion: { LVL: 0, STAT: 0, BASE: 0 },
+            "Martial Arts": { LVL: 0, STAT: 0, BASE: 0 },
+            "Melee Weapon": { LVL: 0, STAT: 0, BASE: 0 },
         },
-        Performance: { Acting: 0, "Play Instrument": [] },
+        Performance: {
+            Acting: { LVL: 0, STAT: 0, BASE: 0 },
+            "Play Instrument": [],
+        },
         "Ranged Weapon": {
-            Archery: 0,
-            Autofire: 0,
-            Handgun: 0,
-            "Heavy Weapons": 0,
-            "Shoulder Arms": 0,
+            Archery: { LVL: 0, STAT: 0, BASE: 0 },
+            Autofire: { LVL: 0, STAT: 0, BASE: 0 },
+            Handgun: { LVL: 0, STAT: 0, BASE: 0 },
+            "Heavy Weapons": { LVL: 0, STAT: 0, BASE: 0 },
+            "Shoulder Arms": { LVL: 0, STAT: 0, BASE: 0 },
         },
         Social: {
-            Bribery: 0,
-            Conversation: 0,
-            "Human Perception": 0,
-            Interrogation: 0,
-            Persuasion: 0,
-            "Personal Grooming": 0,
-            Streetwise: 0,
-            Trading: 0,
-            "Wardrobe Style": 0,
+            Bribery: { LVL: 0, STAT: 0, BASE: 0 },
+            Conversation: { LVL: 0, STAT: 0, BASE: 0 },
+            "Human Perception": { LVL: 0, STAT: 0, BASE: 0 },
+            Interrogation: { LVL: 0, STAT: 0, BASE: 0 },
+            Persuasion: { LVL: 0, STAT: 0, BASE: 0 },
+            "Personal Grooming": { LVL: 0, STAT: 0, BASE: 0 },
+            Streetwise: { LVL: 0, STAT: 0, BASE: 0 },
+            Trading: { LVL: 0, STAT: 0, BASE: 0 },
+            "Wardrobe Style": { LVL: 0, STAT: 0, BASE: 0 },
         },
         Technique: {
-            "Air Vehicle Tech": 0,
-            "Basic Tech": 0,
-            Cybertech: 0,
-            Demolitions: 0,
-            "Electronics Security Tech": 0,
-            "First Aid": 0,
-            Forgery: 0,
-            "Land Vehicle Tech": 0,
-            "Paint/Draw/Sculpt": 0,
-            Paramedic: 0,
-            "Photography/Film": 0,
-            "Pick Lock": 0,
-            "Pick Pocket": 0,
-            "Sea Vehicle Tech": 0,
-            Weaponstech: 0,
+            "Air Vehicle Tech": { LVL: 0, STAT: 0, BASE: 0 },
+            "Basic Tech": { LVL: 0, STAT: 0, BASE: 0 },
+            Cybertech: { LVL: 0, STAT: 0, BASE: 0 },
+            Demolitions: { LVL: 0, STAT: 0, BASE: 0 },
+            "Electronics Security Tech": { LVL: 0, STAT: 0, BASE: 0 },
+            "First Aid": { LVL: 0, STAT: 0, BASE: 0 },
+            Forgery: { LVL: 0, STAT: 0, BASE: 0 },
+            "Land Vehicle Tech": { LVL: 0, STAT: 0, BASE: 0 },
+            "Paint/Draw/Sculpt": { LVL: 0, STAT: 0, BASE: 0 },
+            Paramedic: { LVL: 0, STAT: 0, BASE: 0 },
+            "Photography/Film": { LVL: 0, STAT: 0, BASE: 0 },
+            "Pick Lock": { LVL: 0, STAT: 0, BASE: 0 },
+            "Pick Pocket": { LVL: 0, STAT: 0, BASE: 0 },
+            "Sea Vehicle Tech": { LVL: 0, STAT: 0, BASE: 0 },
+            Weaponstech: { LVL: 0, STAT: 0, BASE: 0 },
         },
     };
 
+    // Object.entries(skills).map((category) => {
+    //     Object.entries(category[1]).map((value) => {
+    //         console.log(value[1]);
+    //     });
+    // });
+
     return (
         <main className="flex flex-col items-center text-white">
-            <div className="flex space-x-4">
+            <div className="flex flex-wrap">
                 {Object.entries(skills).map((category) => {
                     return (
-                        <div key={category[0]} className="">
+                        <div key={category[0]} className="mt-4 basis-1/3 ">
                             <b>{category[0]}</b>
                             {Object.entries(category[1]).map((value) => {
                                 return (
-                                    <p key={value[0]} className="flex flex-row">
-                                        {value[0]}: {value[1]}
-                                    </p>
+                                    <div
+                                        key={value[0]}
+                                        className="flex flex-row items-center"
+                                    >
+                                        <p>{`${value[0]}: `} </p>
+                                        {Object.entries(value[1]).map(
+                                            (lvlstatbase) => {
+                                                return (
+                                                    <p key={lvlstatbase[0]}>
+                                                        {`${lvlstatbase[0]}: `}
+                                                        <input
+                                                            type={"number"}
+                                                            placeholder={"0"}
+                                                            className={`cool-box-shadow h-12 w-12 appearance-none rounded 
+                                                            border border-[#ff6058] bg-[#31181e] py-3 
+                                                            px-4 text-center text-lg leading-tight text-[#28feff] transition duration-200
+                                                            hover:border-[#28feff] focus:border-[#28feff] focus:outline-none`}
+                                                        />
+                                                    </p>
+                                                );
+                                            }
+                                        )}
+                                    </div>
                                 );
                             })}
                         </div>

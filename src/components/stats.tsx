@@ -35,7 +35,13 @@ const Stats: NextPage = () => {
                                     {stat}
                                 </label>
                             </div>
-                            <Input isNum={true} s={"5xl"} type={"number"} />
+                            <Input
+                                isNum={true}
+                                s={"5xl"}
+                                type={"number"}
+                                placeholder={"0"}
+                                size={"32"}
+                            />
                         </div>
                     );
                 })}
@@ -47,7 +53,13 @@ const Stats: NextPage = () => {
                             Hit Points
                         </label>
                     </div>
-                    <Input isNum={true} s={"5xl"} type={"number"} />
+                    <Input
+                        isNum={true}
+                        s={"5xl"}
+                        type={"number"}
+                        placeholder={"0"}
+                        size={"32"}
+                    />
                 </div>
                 <div className="mb-6 flex w-64 flex-wrap justify-center">
                     <div className="mb-6 w-full pl-16 md:mb-0">
@@ -55,7 +67,13 @@ const Stats: NextPage = () => {
                             Humanity
                         </label>
                     </div>
-                    <Input isNum={true} s={"5xl"} type={"number"} />
+                    <Input
+                        isNum={true}
+                        s={"5xl"}
+                        type={"number"}
+                        placeholder={"0"}
+                        size={"32"}
+                    />
                 </div>
             </form>
         </main>
