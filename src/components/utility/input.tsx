@@ -13,7 +13,7 @@ const Input: NextPage<InputProps> = (props) => {
     const s = props.s;
     const type = props.type;
     const placeholder = props.placeholder;
-    const size = props.size;
+    //const size = props.size;
 
     return (
         <input

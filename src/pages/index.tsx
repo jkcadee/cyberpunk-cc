@@ -22,7 +22,10 @@ const Home: NextPage = () => {
                     </h1>
                     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8">
                         <Link href="/2020">
-                            <button className="rounded bg-gray-500 py-2 px-6 text-white hover:bg-gray-600" disabled={true}>
+                            <button
+                                className="rounded bg-gray-500 py-2 px-6 text-white opacity-50 hover:bg-gray-600"
+                                disabled={true}
+                            >
                                 2020
                             </button>
                         </Link>

@@ -89,45 +89,65 @@ const Skills: NextPage = () => {
         },
     };
 
-    // Object.entries(skills).map((category) => {
-    //     Object.entries(category[1]).map((value) => {
-    //         console.log(value[1]);
-    //     });
-    // });
-
     return (
         <main className="flex flex-col items-center text-white">
-            <div className="flex flex-wrap">
+            <div className="flex flex-col flex-wrap">
                 {Object.entries(skills).map((category) => {
                     return (
-                        <div key={category[0]} className="mt-4 basis-1/3 ">
-                            <b>{category[0]}</b>
+                        <div
+                            key={category[0]}
+                            className="cool-box-shadow mt-6 h-fit basis-1/6 border-2 border-[#ff6058] px-4 py-2"
+                        >
+                            <b className="text-2xl">{category[0]}</b>
                             {Object.entries(category[1]).map((value) => {
-                                return (
-                                    <div
-                                        key={value[0]}
-                                        className="flex flex-row items-center"
-                                    >
-                                        <p>{`${value[0]}: `} </p>
-                                        {Object.entries(value[1]).map(
-                                            (lvlstatbase) => {
-                                                return (
-                                                    <p key={lvlstatbase[0]}>
-                                                        {`${lvlstatbase[0]}: `}
-                                                        <input
-                                                            type={"number"}
-                                                            placeholder={"0"}
-                                                            className={`cool-box-shadow h-12 w-12 appearance-none rounded 
-                                                            border border-[#ff6058] bg-[#31181e] py-3 
-                                                            px-4 text-center text-lg leading-tight text-[#28feff] transition duration-200
-                                                            hover:border-[#28feff] focus:border-[#28feff] focus:outline-none`}
-                                                        />
-                                                    </p>
-                                                );
-                                            }
-                                        )}
-                                    </div>
-                                );
+                                if (Array.isArray(value[1])) {
+                                    return (
+                                        <div
+                                            key={value[0]}
+                                            className="grid items-center gap-2"
+                                        >
+                                            <p className="text-lg font-medium">
+                                                {`${value[0]}: `}
+                                            </p>
+                                            <div>
+                                                <button className="rounded bg-red-500 py-2 px-6 text-white hover:bg-red-600">
+                                                    New
+                                                </button>
+                                            </div>
+                                        </div>
+                                    );
+                                } else {
+                                    return (
+                                        <div
+                                            key={value[0]}
+                                            className="grid grid-cols-4 items-center gap-2"
+                                        >
+                                            <p className="text-lg font-medium">
+                                                {`${value[0]}: `}
+                                            </p>
+                                            {Object.entries(value[1]).map(
+                                                (lvlstatbase) => {
+                                                    return (
+                                                        <div
+                                                            key={lvlstatbase[0]}
+                                                            className="flex flex-col items-center"
+                                                        >
+                                                            <p className="font-bold">{`${lvlstatbase[0]}`}</p>
+                                                            <input
+                                                                type={"number"}
+                                                                placeholder="0"
+                                                                className={`cool-box-shadow h-12 w-12 appearance-none rounded 
+                                                                    border border-[#ff6058] bg-[#31181e] py-3 
+                                                                    px-4 text-center text-lg leading-tight text-[#28feff] transition duration-200
+                                                                    hover:border-[#28feff] focus:border-[#28feff] focus:outline-none`}
+                                                            />
+                                                        </div>
+                                                    );
+                                                }
+                                            )}
+                                        </div>
+                                    );
+                                }
                             })}
                         </div>
                     );

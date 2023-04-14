@@ -21,7 +21,7 @@ const General: NextPage = () => {
 
     return (
         <main className="space-between flex flex-col items-center">
-            <form className="space-between flex basis-1/2 items-center justify-center gap-8">
+            <form className="space-between mt-4 flex basis-1/2 items-center justify-center gap-8">
                 {general.map((info) => {
                     return (
                         <div
@@ -43,7 +43,7 @@ const General: NextPage = () => {
                         </div>
                     );
                 })}
-                <div className="mb-6 flex w-24 flex-wrap justify-center">
+                <div className="mb-6 mt-3 flex w-24 flex-wrap">
                     <div className="mb-6 w-full md:mb-0">
                         <label className="mb-2 text-lg font-bold text-white">
                             Age
@@ -53,9 +53,9 @@ const General: NextPage = () => {
                         type={"number"}
                         placeholder={"20"}
                         className={`cool-box-shadow h-16 w-16 appearance-none rounded 
-                border border-[#ff6058] bg-[#31181e] py-3 
-                px-4 text-center text-lg leading-tight text-[#28feff] transition duration-200
-                hover:border-[#28feff] focus:border-[#28feff] focus:outline-none`}
+                        border border-[#ff6058] bg-[#31181e] py-3 
+                        px-4 text-center text-xl leading-tight text-[#28feff] transition duration-200
+                        hover:border-[#28feff] focus:border-[#28feff] focus:outline-none`}
                     />
                 </div>
             </form>
