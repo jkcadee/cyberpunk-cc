@@ -98,7 +98,9 @@ const Skills: NextPage = () => {
                             key={category[0]}
                             className="cool-box-shadow mt-6 h-fit basis-1/6 border-2 border-[#ff6058] px-4 py-2"
                         >
-                            <b className="text-2xl">{category[0]}</b>
+                            <h3>
+                                <b className="text-2xl">{category[0]}</b>
+                            </h3>
                             {Object.entries(category[1]).map((value) => {
                                 if (Array.isArray(value[1])) {
                                     return (
@@ -135,7 +137,9 @@ const Skills: NextPage = () => {
                                                             <p className="font-bold">{`${lvlstatbase[0]}`}</p>
                                                             <input
                                                                 type={"number"}
-                                                                placeholder="0"
+                                                                defaultValue={
+                                                                    lvlstatbase[1]
+                                                                }
                                                                 className={`cool-box-shadow h-12 w-12 appearance-none rounded 
                                                                     border border-[#ff6058] bg-[#31181e] py-3 
                                                                     px-4 text-center text-lg leading-tight text-[#28feff] transition duration-200

@@ -20,8 +20,8 @@ const General: NextPage = () => {
     ];
 
     return (
-        <main className="space-between flex flex-col items-center">
-            <form className="space-between mt-4 flex basis-1/2 items-center justify-center gap-8">
+        <main className="flex flex-col items-center">
+            <form className="mt-4 flex basis-1/2 items-center justify-center gap-8">
                 {general.map((info) => {
                     return (
                         <div
@@ -59,13 +59,12 @@ const General: NextPage = () => {
                     />
                 </div>
             </form>
-            <form className="max-w-auto space-between flex basis-1/2 items-center justify-center gap-4 text-lg text-white">
+            <form className="max-w-auto space-between flex basis-1/2 items-center  justify-center gap-4 text-lg text-white">
                 <div className="mb-6 flex w-64 flex-wrap justify-center">
-                    <div className="mb-6 w-full md:mb-0">
-                        <label className="mb-2 text-lg font-bold text-white">
-                            Role
-                        </label>
-                    </div>
+                    <label className="mb-6 mb-2 w-full text-lg font-bold text-white md:mb-0">
+                        Role
+                    </label>
+
                     <Dropdown inputList={roles} />
                 </div>
 

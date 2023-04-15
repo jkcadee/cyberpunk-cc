@@ -44,7 +44,11 @@ const Red: NextPage = () => {
                                 >
                                     <a
                                         className={`mt-4 block cursor-pointer text-xl transition duration-200 hover:text-[#28feff] lg:mt-0 lg:inline-block 
-                            ${active === opt ? "text-[#28feff]" : ""}`}
+                                        ${
+                                            active === opt
+                                                ? "text-[#28feff]"
+                                                : ""
+                                        }`}
                                         onClick={setNewActive}
                                     >
                                         {opt}
@@ -54,7 +58,10 @@ const Red: NextPage = () => {
                         })}
                     </ul>
                     <div>
-                        <button className="mt-4 inline-block cursor-pointer rounded border border-white px-4 py-2 text-lg leading-none text-white hover:border-[#28feff] hover:text-[#28feff] lg:mt-0">
+                        <button
+                            className="mt-4 inline-block cursor-pointer rounded border border-white 
+                            px-4 py-2 text-lg leading-none text-white hover:border-[#28feff] hover:text-[#28feff] lg:mt-0"
+                        >
                             Download PDF
                         </button>
                     </div>
