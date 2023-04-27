@@ -7,27 +7,44 @@ const General: NextPage = () => {
 
     const general = ["Handle", "Gender"];
     const roles = [
-        { name: "Rockerboy", ability: "Charismatic Impact", description: "" },
-        { name: "Netrunner", ability: "Interface", description: "" },
-        { name: "Fixer", ability: "Operator", description: "" },
-        { name: "Nomad", ability: "Moto", description: "" },
-        { name: "Solo", ability: "Combat Awareness", description: "" },
-        { name: "Tech", ability: "Maker", description: "" },
-        { name: "Exec", ability: "Teamwork", description: "" },
-        { name: "Media", ability: "Credibility", description: "" },
-        { name: "Lawman", ability: "Backup", description: "" },
-        { name: "Medtech", ability: "Medicine", description: "" },
+        {
+            name: "Rockerboy",
+            ability: "Charismatic Impact",
+            description: "You're a Rockerboy.",
+        },
+        {
+            name: "Netrunner",
+            ability: "Interface",
+            description: "You're a Netrunner.",
+        },
+        { name: "Fixer", ability: "Operator", description: "You're a Fixer." },
+        { name: "Nomad", ability: "Moto", description: "You're a Nomad." },
+        {
+            name: "Solo",
+            ability: "Combat Awareness",
+            description: "You're a Solo.",
+        },
+        { name: "Tech", ability: "Maker", description: "You're a Tech." },
+        { name: "Exec", ability: "Teamwork", description: "You're an Exec." },
+        {
+            name: "Media",
+            ability: "Credibility",
+            description: "You're a Media.",
+        },
+        { name: "Lawman", ability: "Backup", description: "You're a Lawman." },
+        {
+            name: "Medtech",
+            ability: "Medicine",
+            description: "You're a Medtech.",
+        },
     ];
 
     return (
         <main className="flex flex-col items-center">
-            <form className="mt-4 flex basis-1/2 items-center justify-center gap-8">
+            <form className="mt-4 flex basis-1/2 items-center gap-8">
                 {general.map((info) => {
                     return (
-                        <div
-                            key={info}
-                            className="mb-6 flex w-64 flex-wrap justify-center"
-                        >
+                        <div key={info} className="mb-6 flex w-64 flex-wrap">
                             <div className="mb-6 w-full md:mb-0">
                                 <label className="mb-2 text-lg font-bold text-white">
                                     {info}
@@ -36,7 +53,6 @@ const General: NextPage = () => {
                                     isNum={false}
                                     s={"xl"}
                                     type={"text"}
-                                    placeholder={"Name"}
                                     size={"12"}
                                 />
                             </div>
@@ -51,7 +67,6 @@ const General: NextPage = () => {
                     </div>
                     <input
                         type={"number"}
-                        placeholder={"20"}
                         className={`cool-box-shadow h-16 w-16 appearance-none rounded 
                         border border-[#ff6058] bg-[#31181e] py-3 
                         px-4 text-center text-xl leading-tight text-[#28feff] transition duration-200
@@ -59,28 +74,22 @@ const General: NextPage = () => {
                     />
                 </div>
             </form>
-            <form className="max-w-auto space-between flex basis-1/2 items-center  justify-center gap-4 text-lg text-white">
-                <div className="mb-6 flex w-64 flex-wrap justify-center">
-                    <label className="mb-6 mb-2 w-full text-lg font-bold text-white md:mb-0">
+            <form className="flex basis-1/2 gap-8 text-lg text-white">
+                <div className="mb-6 flex w-64 flex-wrap content-baseline">
+                    <label className="mb-2 block w-full text-lg font-bold text-white md:mb-0">
                         Role
                     </label>
-
                     <Dropdown inputList={roles} />
                 </div>
 
                 <div className="mr-6 flex flex-col">
-                    <p className="">Your role ability:</p>
-                    <p>
-                        <b>{roles[0]?.ability}</b>
-                    </p>
+                    <p className="font-bold">Your role ability:</p>
+                    <p className="text-[#28feff]">{roles[0]?.ability}</p>
                 </div>
 
                 <div className="flex w-48 flex-col">
-                    <p>Role Description:</p>
-                    <p>
-                        WIP lots of cool descriptions about your roles lorem
-                        ipsum lorem ipsum lorem ipsum lorem ipsum
-                    </p>
+                    <p className="font-bold">Role Description:</p>
+                    <p>{roles[0]?.description}</p>
                 </div>
             </form>
         </main>

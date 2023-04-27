@@ -1,15 +1,11 @@
 import { type NextPage } from "next";
 
 const LifePath: NextPage = () => {
-    return(
+    return (
         <>
-            <main className="flex flex-col">
-                <form>
-                    <input type={"text"} placeholder={"Lifepath"}></input>
-                </form>
-            </main>
+            <main className="flex flex-col text-white">WIP</main>
         </>
     );
-}
+};
 
 export default LifePath;

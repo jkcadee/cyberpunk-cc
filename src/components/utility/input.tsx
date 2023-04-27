@@ -4,7 +4,6 @@ interface InputProps {
     isNum: boolean;
     s: string;
     type: string;
-    placeholder: string;
     size: string;
 }
 
@@ -12,13 +11,11 @@ const Input: NextPage<InputProps> = (props) => {
     const isNum = props.isNum;
     const s = props.s;
     const type = props.type;
-    const placeholder = props.placeholder;
     //const size = props.size;
 
     return (
         <input
             type={type}
-            placeholder={placeholder}
             className={`cool-box-shadow ${
                 isNum ? `h-32 w-32` : `h-12`
             } appearance-none rounded 

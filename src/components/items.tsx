@@ -1,29 +1,85 @@
 import { type NextPage } from "next";
-import Input from "./utility/input";
+import { useState } from "react";
 
 const Items: NextPage = () => {
-    // Will contain style/fashion, weapons, armour and items
-
-    const items = {
+    const [items, setItems] = useState({
         Armor: {
-            Head: { Name: "Hair Pin", SP: "2", Penalty: "0" },
-            Body: { Name: "Leather Jacket", SP: "5", Penalty: "1" },
+            Head: { Name: "", SP: "", Penalty: "" },
+            Body: { Name: "", SP: "", Penalty: "" },
             Shield: { Name: "", SP: "", Penalty: "" },
         },
         Weapons: [
             {
-                Name: "Handgun",
-                DMG: "1D4",
-                Ammo: "15",
-                ROF: "1",
-                Notes: "Engraved with my name",
+                Name: "",
+                DMG: "",
+                Ammo: "",
+                ROF: "",
+                Notes: "",
             },
-            { Name: "Rifle", DMG: "1D8", Ammo: "12", ROF: "2", Notes: "None" },
         ],
-        Fashion: "A washed leather jacket.",
-        Ammunition: [{ Type: "Handgun bullet", Number: "15" }],
-        Cash: [{ Type: "Credits", Number: "500" }],
-        Gear: [{ Name: "Photo", Notes: "Memory of a good time." }],
+        Fashion: "",
+        Ammunition: [{ Type: "", Number: "" }],
+        Cash: [{ Type: "", Number: "" }],
+        Gear: [{ Name: "", Notes: "" }],
+    });
+
+    const createNewItem = (event: React.MouseEvent<HTMLButtonElement>) => {
+        event.preventDefault();
+        switch (event.currentTarget.name) {
+            case "Weapon":
+                setItems({
+                    ...items,
+                    Weapons: [
+                        ...items.Weapons,
+                        {
+                            Name: "",
+                            DMG: "",
+                            Ammo: "",
+                            ROF: "",
+                            Notes: "",
+                        },
+                    ],
+                });
+                break;
+            case "Cash":
+                setItems({
+                    ...items,
+                    Cash: [
+                        ...items.Cash,
+                        {
+                            Type: "",
+                            Number: "",
+                        },
+                    ],
+                });
+                break;
+            case "Ammunition":
+                setItems({
+                    ...items,
+                    Ammunition: [
+                        ...items.Ammunition,
+                        {
+                            Type: "",
+                            Number: "",
+                        },
+                    ],
+                });
+                break;
+            case "Gear":
+                setItems({
+                    ...items,
+                    Gear: [
+                        ...items.Gear,
+                        {
+                            Name: "",
+                            Notes: "",
+                        },
+                    ],
+                });
+                break;
+            default:
+                break;
+        }
     };
 
     return (
@@ -42,7 +98,7 @@ const Items: NextPage = () => {
                                 return (
                                     <div
                                         key={values[0]}
-                                        className="flex flex-row"
+                                        className="mb-2 flex flex-row"
                                     >
                                         <p className="basis-1/4">{values[0]}</p>
                                         <input
@@ -61,11 +117,18 @@ const Items: NextPage = () => {
             </div>
 
             <div className="basis-1/6">
+                <button
+                    className="mt-2 rounded bg-red-500 py-2 px-4 text-white hover:bg-red-600"
+                    onClick={createNewItem}
+                    name="Weapon"
+                >
+                    Add Weapon
+                </button>
                 {items.Weapons.map((weapon) => {
                     return (
                         <div
                             key={weapon.Name}
-                            className="cool-box-shadow ml-2 mt-6 h-fit basis-1/6 border-2 border-[#ff6058] px-4 py-2"
+                            className="cool-box-shadow ml-2 mt-4 h-fit basis-1/6 border-2 border-[#ff6058] px-4 py-2"
                         >
                             <h3>
                                 <b className="text-xl">Weapon</b>
@@ -74,7 +137,7 @@ const Items: NextPage = () => {
                                 return (
                                     <div
                                         key={category[0]}
-                                        className="flex flex-row"
+                                        className="mb-2 flex flex-row"
                                     >
                                         <p className="basis-1/4">
                                             {category[0]}
@@ -95,11 +158,18 @@ const Items: NextPage = () => {
             </div>
 
             <div className="basis-1/6">
+                <button
+                    className="mt-2 rounded bg-red-500 py-2 px-4 text-white hover:bg-red-600"
+                    onClick={createNewItem}
+                    name="Cash"
+                >
+                    Add Cash
+                </button>
                 {items.Cash.map((cash) => {
                     return (
                         <div
                             key={cash.Type}
-                            className="cool-box-shadow ml-2 mt-6 h-fit basis-1/6 border-2 border-[#ff6058] px-4 py-2"
+                            className="cool-box-shadow ml-2 mt-4 h-fit basis-1/6 border-2 border-[#ff6058] px-4 py-2"
                         >
                             <h3>
                                 <b className="text-xl">Cash</b>
@@ -108,7 +178,7 @@ const Items: NextPage = () => {
                                 return (
                                     <div
                                         key={category[0]}
-                                        className="flex flex-row"
+                                        className="mb-2 flex flex-row"
                                     >
                                         <p className="basis-1/4">
                                             {category[0]}
@@ -129,11 +199,18 @@ const Items: NextPage = () => {
             </div>
 
             <div className="basis-1/6">
+                <button
+                    className="mt-2 rounded bg-red-500 py-2 px-4 text-white hover:bg-red-600"
+                    onClick={createNewItem}
+                    name="Ammunition"
+                >
+                    Add Ammunition
+                </button>
                 {items.Ammunition.map((ammo) => {
                     return (
                         <div
                             key={ammo.Type}
-                            className="cool-box-shadow ml-2 mt-6 h-fit basis-1/6 border-2 border-[#ff6058] px-4 py-2"
+                            className="cool-box-shadow ml-2 mt-4 h-fit basis-1/6 border-2 border-[#ff6058] px-4 py-2"
                         >
                             <h3>
                                 <b className="text-xl">Ammunition</b>
@@ -142,7 +219,7 @@ const Items: NextPage = () => {
                                 return (
                                     <div
                                         key={category[0]}
-                                        className="flex flex-row"
+                                        className="mb-2 flex flex-row"
                                     >
                                         <p className="basis-1/4">
                                             {category[0]}
@@ -163,11 +240,18 @@ const Items: NextPage = () => {
             </div>
 
             <div className="basis-1/6">
+                <button
+                    className="mt-2 rounded bg-red-500 py-2 px-4 text-white hover:bg-red-600"
+                    onClick={createNewItem}
+                    name="Gear"
+                >
+                    Add Gear
+                </button>
                 {items.Gear.map((gear) => {
                     return (
                         <div
                             key={gear.Name}
-                            className="cool-box-shadow ml-2 mt-6 h-fit basis-1/6 border-2 border-[#ff6058] px-4 py-2"
+                            className="cool-box-shadow ml-2 mt-4 h-fit basis-1/6 border-2 border-[#ff6058] px-4 py-2"
                         >
                             <h3>
                                 <b className="text-xl">Gear</b>
@@ -176,7 +260,7 @@ const Items: NextPage = () => {
                                 return (
                                     <div
                                         key={category[0]}
-                                        className="flex flex-row"
+                                        className="mb-2 flex flex-row"
                                     >
                                         <p className="basis-1/4">
                                             {category[0]}
@@ -202,7 +286,7 @@ const Items: NextPage = () => {
                 </h3>
                 <textarea
                     defaultValue={items.Fashion}
-                    className="cool-box-shadow h-32 w-64 resize-y appearance-none rounded 
+                    className="cool-box-shadow mb-2 h-32 w-64 resize-y appearance-none rounded 
                     border border-[#ff6058] bg-[#31181e] py-3 
                     px-4 text-lg leading-tight text-[#28feff] transition duration-200
                     hover:border-[#28feff] focus:border-[#28feff] focus:outline-none"

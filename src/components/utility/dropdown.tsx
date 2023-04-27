@@ -14,7 +14,7 @@ const Dropdown: NextPage<DropdownProps> = (props) => {
     const inputList = props.inputList;
 
     return (
-        <div className="relative inline-block w-full">
+        <div className="relative inline-block h-fit w-[30rem] ">
             <select
                 className="cool-box-shadow w-full appearance-none rounded border border-[#ff6058] bg-[#31181e] py-3 px-4
                 pl-3 pr-6 text-center text-xl text-base leading-tight text-[#28feff]
@@ -22,7 +22,7 @@ const Dropdown: NextPage<DropdownProps> = (props) => {
             >
                 {inputList.map((role) => {
                     return (
-                        <option className="text-lg" key={role.name}>
+                        <option className="font-sans text-lg" key={role.name}>
                             {role.name}
                         </option>
                     );
